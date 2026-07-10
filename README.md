@@ -53,8 +53,17 @@ public/
 
 The site uses Next.js static export (`output: "export"` in `next.config.ts`) — `npm run build` emits plain HTML/CSS/JS into `out/`, deployable to any static host.
 
-- **Cloudflare Pages** — framework preset: **Next.js (Static HTML Export)**, build command `npm run build`, build output directory `out`.
+### Cloudflare Workers (current setup)
+
+Deployed as a static-assets Worker via [`wrangler.jsonc`](wrangler.jsonc), which serves `out/`.
+
+- **Git-integrated (Workers Builds):** build command `npm run build`, deploy command `npx wrangler deploy`.
+- **From your machine:** `npm run build && npx wrangler deploy`.
+
+### Other hosts
+
 - **Vercel** — import the repo; the static export is detected automatically.
+- **Any static host** — upload the contents of `out/`.
 
 ## Notes
 

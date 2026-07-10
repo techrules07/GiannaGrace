@@ -1,0 +1,12 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "giannagrace",
+  "compatibility_date": "2026-07-10",
+  // Static-assets-only Worker: serves the Next.js static export in ./out.
+  // `npm run build` produces this directory before `npx wrangler deploy` runs.
+  "assets": {
+    "directory": "./out",
+    // Serve the exported 404.html for unmatched paths.
+    "not_found_handling": "404-page"
+  }
+}
