@@ -51,10 +51,10 @@ public/
 
 ## Deployment
 
-The site is fully static-friendly and deploys as-is:
+The site uses Next.js static export (`output: "export"` in `next.config.ts`) — `npm run build` emits plain HTML/CSS/JS into `out/`, deployable to any static host.
 
-- **Vercel** — import the repo, no configuration needed.
-- **Cloudflare Pages** — use the Next.js preset (`@cloudflare/next-on-pages`) or add `output: "export"` to `next.config.ts` for a pure static export.
+- **Cloudflare Pages** — framework preset: **Next.js (Static HTML Export)**, build command `npm run build`, build output directory `out`.
+- **Vercel** — import the repo; the static export is detected automatically.
 
 ## Notes
 
