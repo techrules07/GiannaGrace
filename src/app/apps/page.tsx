@@ -17,7 +17,11 @@ export default function AppsPage() {
     operatingSystem: "Android",
     applicationCategory: "LifestyleApplication",
     description: app.description,
-    url: app.playStoreUrl,
+    ...(app.playStoreUrl
+      ? { url: app.playStoreUrl }
+      : app.privacyPolicyHref
+        ? { url: `${siteConfig.url}${app.privacyPolicyHref}` }
+        : {}),
     author: {
       "@type": "Person",
       name: siteConfig.name,

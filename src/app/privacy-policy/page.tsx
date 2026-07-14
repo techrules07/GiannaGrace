@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
-import { apps } from "@/lib/apps";
+import Link from "next/link";
 import { siteConfig } from "@/lib/site";
+
+const APP_NAME = "Hindu Calendar - Offline";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
-  description: `Privacy policy for Android applications published by ${siteConfig.name}, including Hindu Calendar - Offline.`,
+  description: `Privacy policy for the ${APP_NAME} Android application published by ${siteConfig.name}.`,
   alternates: { canonical: "/privacy-policy" },
 };
 
@@ -24,14 +26,23 @@ export default function PrivacyPolicyPage() {
             Overview
           </h2>
           <p className="mt-3 text-muted">
-            This Privacy Policy applies to all Android applications developed
-            and published by {siteConfig.name}{" "}
-            (&ldquo;we&rdquo;, &ldquo;our&rdquo;, or &ldquo;us&rdquo;) under
-            the domain{" "}
-            {siteConfig.domain}, including{" "}
-            {apps.map((app) => app.name).join(", ")}. We are committed to
-            protecting your privacy and being transparent about how our apps
-            work.
+            This Privacy Policy applies to the {APP_NAME} application
+            (&ldquo;the app&rdquo;), developed and published by{" "}
+            {siteConfig.name}
+            {" "}
+            (&ldquo;we&rdquo;, &ldquo;our&rdquo;, or &ldquo;us&rdquo;) under the
+            domain {siteConfig.domain}. We are committed to protecting your
+            privacy and being transparent about how the app works.
+          </p>
+          <p className="mt-3 text-muted">
+            Other apps we publish may have their own privacy policies — see the{" "}
+            <Link
+              href="/apps"
+              className="text-accent underline underline-offset-4 hover:opacity-80"
+            >
+              Apps page
+            </Link>{" "}
+            for each app&rsquo;s policy.
           </p>
         </section>
 
@@ -40,7 +51,7 @@ export default function PrivacyPolicyPage() {
             Information We Collect
           </h2>
           <p className="mt-3 text-muted">
-            Our apps are designed to work fully offline and do not collect,
+            The app is designed to work fully offline and does not collect,
             store, or transmit any personal information. Specifically, we do
             not collect:
           </p>
@@ -68,7 +79,7 @@ export default function PrivacyPolicyPage() {
             Third-Party Services
           </h2>
           <p className="mt-3 text-muted">
-            Our apps are distributed through Google Play. Google Play itself
+            The app is distributed through Google Play. Google Play itself
             may collect information as described in{" "}
             <a
               href="https://policies.google.com/privacy"
@@ -78,8 +89,8 @@ export default function PrivacyPolicyPage() {
             >
               Google&rsquo;s Privacy Policy
             </a>
-            . We do not embed third-party analytics or advertising SDKs in our
-            apps.
+            . We do not embed third-party analytics or advertising SDKs in this
+            app.
           </p>
         </section>
 
@@ -88,7 +99,7 @@ export default function PrivacyPolicyPage() {
             Children&rsquo;s Privacy
           </h2>
           <p className="mt-3 text-muted">
-            Our apps do not collect personal information from anyone, including
+            The app does not collect personal information from anyone, including
             children under the age of 13.
           </p>
         </section>

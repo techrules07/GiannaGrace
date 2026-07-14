@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { GooglePlayBadge } from "@/components/google-play-badge";
 import type { AppEntry } from "@/lib/apps";
 
@@ -18,8 +19,22 @@ export function AppCard({ app }: { app: AppEntry }) {
           <p className="mt-1 text-sm font-medium text-accent">{app.tagline}</p>
         </div>
         <p className="text-sm leading-relaxed text-muted">{app.description}</p>
-        <div className="mt-1">
-          <GooglePlayBadge href={app.playStoreUrl} appName={app.name} />
+        <div className="mt-1 flex flex-wrap items-center gap-x-5 gap-y-3">
+          {app.playStoreUrl ? (
+            <GooglePlayBadge href={app.playStoreUrl} appName={app.name} />
+          ) : (
+            <span className="inline-flex items-center rounded-lg border border-line px-4 py-2 text-sm font-medium text-muted">
+              Coming soon to Google Play
+            </span>
+          )}
+          {app.privacyPolicyHref && (
+            <Link
+              href={app.privacyPolicyHref}
+              className="text-sm font-medium text-accent underline underline-offset-4 hover:opacity-80"
+            >
+              Privacy Policy
+            </Link>
+          )}
         </div>
       </div>
     </article>

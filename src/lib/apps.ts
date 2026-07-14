@@ -1,13 +1,17 @@
 export interface AppEntry {
-  /** URL-safe identifier, reserved for future per-app pages (/apps/[slug]). */
+  /** URL-safe identifier, also used for per-app routes (/apps/[slug]/...). */
   slug: string;
   name: string;
   tagline: string;
   description: string;
   /** Path under /public to the app icon. */
   icon: string;
-  packageId: string;
-  playStoreUrl: string;
+  /** Android package id. Omit while the app is unpublished. */
+  packageId?: string;
+  /** Google Play listing URL. Omit while the app is unpublished. */
+  playStoreUrl?: string;
+  /** Path to this app's privacy policy (a route on this site). */
+  privacyPolicyHref?: string;
 }
 
 /**
@@ -25,5 +29,15 @@ export const apps: AppEntry[] = [
     packageId: "com.aj.hinducalendar",
     playStoreUrl:
       "https://play.google.com/store/apps/details?id=com.aj.hinducalendar",
+    privacyPolicyHref: "/privacy-policy",
+  },
+  {
+    slug: "aispeeddetector",
+    name: "Speed Gun : AI Speed Detector",
+    tagline: "Measure the speed of moving objects in real time.",
+    description:
+      "An on-device AI speed gun that uses your camera to detect moving objects and estimate their speed. Track peak and average speeds with speed history — camera processing stays on your device.",
+    icon: "/apps/ai-speed-detector.svg",
+    privacyPolicyHref: "/apps/aispeeddetector/privacy-policy",
   },
 ];
