@@ -38,6 +38,9 @@ export const apps: AppEntry[] = [
     description:
       "An on-device AI speed gun that uses your camera to detect moving objects and estimate their speed. Track peak and average speeds with speed history — camera processing stays on your device.",
     icon: "/apps/ai-speed-detector.svg",
+    packageId: "com.aj.aispeeddetector",
+    playStoreUrl:
+      "https://play.google.com/store/apps/details?id=com.aj.aispeeddetector",
     privacyPolicyHref: "/apps/aispeeddetector/privacy-policy",
   },
 ];
