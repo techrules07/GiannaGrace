@@ -4,8 +4,8 @@ import Link from "next/link";
 const APP_NAME = "AI Speed Detector";
 const EFFECTIVE_DATE = "14 July 2026";
 const LAST_UPDATED = "30 August 2026";
-const DEVELOPER_NAME = "Antto Gnanasiromony";
-const CONTACT_EMAIL = "antto0007@gmail.com";
+const DEVELOPER_NAME = "Gia Labs";
+const CONTACT_EMAIL = "gialabs0007@gmail.com";
 
 export const metadata: Metadata = {
   title: `Privacy Policy — ${APP_NAME}`,
