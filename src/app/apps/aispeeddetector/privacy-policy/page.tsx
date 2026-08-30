@@ -3,13 +3,13 @@ import Link from "next/link";
 
 const APP_NAME = "AI Speed Detector";
 const EFFECTIVE_DATE = "14 July 2026";
-const LAST_UPDATED = "14 July 2026";
-const CONTACT_NAME = "Antto Gnanasiromony";
+const LAST_UPDATED = "30 August 2026";
+const DEVELOPER_NAME = "Antto Gnanasiromony";
 const CONTACT_EMAIL = "antto0007@gmail.com";
 
 export const metadata: Metadata = {
   title: `Privacy Policy — ${APP_NAME}`,
-  description: `Privacy policy for the ${APP_NAME} Android application, covering on-device camera processing, local storage, Google AdMob, and Google Firebase.`,
+  description: `Privacy policy for the ${APP_NAME} Android application, covering on-device camera processing, local storage, Google AdMob, Google Firebase, and Google Play Billing.`,
   alternates: { canonical: "/apps/aispeeddetector/privacy-policy" },
 };
 
@@ -24,6 +24,13 @@ function ExtLink({ href, children }: { href: string; children: React.ReactNode }
     >
       {children}
     </a>
+  );
+}
+
+/** Inline emphasis for key terms, slightly brighter than body text. */
+function B({ children }: { children: React.ReactNode }) {
+  return (
+    <strong className="font-semibold text-foreground">{children}</strong>
   );
 }
 
@@ -55,19 +62,19 @@ export default function AiSpeedDetectorPrivacyPolicyPage() {
 
       <div className="mt-8 flex flex-col gap-8 leading-relaxed text-muted">
         <p>
-          This Privacy Policy explains how (&ldquo;we,&rdquo; &ldquo;us,&rdquo;
-          or &ldquo;our&rdquo;) handles information in connection with the{" "}
-          {APP_NAME}
-          {" "}
+          This Privacy Policy explains how <B>{DEVELOPER_NAME}</B>{" "}
+          (&ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;) handles
+          information in connection with the <B>{APP_NAME}</B>{" "}
           mobile application (the &ldquo;App&rdquo;). By downloading or using
           the App, you agree to the practices described in this policy.
         </p>
         <p>
-          We have designed {APP_NAME} to work primarily on your device. We do
-          not collect, sell, or share your personal information ourselves.
-          However, the App uses a small number of third-party services (Google
-          AdMob and Google Firebase) that collect limited data to show ads and
-          keep the App stable. This policy explains exactly what that means.
+          We have designed {APP_NAME} to work primarily on your device. We do{" "}
+          <B>not</B> collect, sell, or share your personal information
+          ourselves. However, the App uses a small number of third-party
+          services (Google AdMob and Google Firebase) that collect limited data
+          to show ads and keep the App stable. This policy explains exactly what
+          that means.
         </p>
 
         <section aria-labelledby="short-version">
@@ -76,22 +83,27 @@ export default function AiSpeedDetectorPrivacyPolicyPage() {
           </h2>
           <ul className="mt-3 list-disc space-y-1.5 pl-6">
             <li>
-              We do not create accounts, and you do not need to sign up to use
-              the App.
-            </li>
-            <li>We do not collect your name, email, or contacts.</li>
-            <li>
-              Your camera feed is processed on your device to measure speed and
-              is not uploaded to us or stored on our servers.
+              We do <B>not</B> create accounts, and you do <B>not</B> need to
+              sign up to use the App.
             </li>
             <li>
-              Your Speed History is stored only on your device. If you uninstall
-              the App, it is deleted.
+              We do <B>not</B> collect your name, email, or contacts.
             </li>
             <li>
-              We use Google AdMob to show ads and Google Firebase for analytics
-              and crash reporting. These services collect limited technical and
-              advertising data, as described below.
+              Your <B>camera feed is processed on your device</B> to measure
+              speed and is <B>not uploaded to us or stored on our servers.</B>
+            </li>
+            <li>
+              Your <B>Speed History is stored only on your device.</B> If you
+              uninstall the App, it is deleted.
+            </li>
+            <li>
+              We use <B>Google AdMob</B> to show ads, <B>Google Firebase</B> for
+              analytics and crash reporting, and <B>Google Play Billing</B> for
+              optional in-app purchases. These services collect limited
+              technical, advertising, and purchase data, including{" "}
+              <B>device or other identifiers</B> (such as an advertising ID and
+              app-instance ID), as described below.
             </li>
           </ul>
         </section>
@@ -117,19 +129,21 @@ export default function AiSpeedDetectorPrivacyPolicyPage() {
             3. Camera use
           </h2>
           <p className="mt-3">
-            The App uses your device&rsquo;s camera so it can detect moving
-            objects and estimate their speed in real time.
+            The App uses your device&rsquo;s <B>camera</B> so it can detect
+            moving objects and estimate their speed in real time.
           </p>
           <ul className="mt-3 list-disc space-y-1.5 pl-6">
-            <li>The camera feed is processed live on your device.</li>
             <li>
-              We do not record, upload, transmit, or store your camera video or
-              images on our servers.
+              The camera feed is <B>processed live on your device.</B>
+            </li>
+            <li>
+              We do <B>not</B> record, upload, transmit, or store your camera
+              video or images on our servers.
             </li>
             <li>
               If you choose to save or capture a frame using the in-app capture
-              button, that image is stored locally on your device under your
-              control, and you can delete it at any time.
+              button, that image is stored <B>locally on your device</B> under
+              your control, and you can delete it at any time.
             </li>
             <li>
               The App will request camera permission before first use. You can
@@ -145,17 +159,17 @@ export default function AiSpeedDetectorPrivacyPolicyPage() {
             4. Data stored on your device
           </h2>
           <p className="mt-3">
-            Some information is saved only on your device to make the App work,
-            including:
+            Some information is saved <B>only on your device</B> to make the App
+            work, including:
           </p>
           <ul className="mt-3 list-disc space-y-1.5 pl-6">
             <li>
-              Speed History — your past measurement sessions (peak, average,
-              duration, and speed graphs)
+              <B>Speed History</B> — your past measurement sessions (peak,
+              average, duration, and speed graphs)
             </li>
             <li>
-              App settings — such as your chosen units (km/h, mph, m/s), theme,
-              language, and calibration preferences
+              <B>App settings</B> — such as your chosen units (km/h, mph, m/s),
+              theme, language, and calibration preferences
             </li>
           </ul>
           <p className="mt-3">
@@ -190,10 +204,11 @@ export default function AiSpeedDetectorPrivacyPolicyPage() {
             <li>App interaction and ad-interaction data</li>
           </ul>
           <p className="mt-3">
-            AdMob may use this data to show personalized ads unless personalized
-            advertising is disabled. You can control ad personalization in your
-            device settings (Settings → Google → Ads) and can reset or delete
-            your advertising ID there.
+            AdMob may use this data to show <B>personalized ads</B> unless
+            personalized advertising is disabled. You can control ad
+            personalization in your device settings (
+            <B>Settings → Google → Ads</B>) and can reset or delete your
+            advertising ID there.
           </p>
           <ul className="mt-3 list-disc space-y-1.5 pl-6">
             <li>
@@ -237,13 +252,36 @@ export default function AiSpeedDetectorPrivacyPolicyPage() {
               https://firebase.google.com/support/privacy
             </ExtLink>
           </p>
+
+          <h3 className="mt-5 font-semibold text-foreground">
+            c) Google Play Billing (in-app purchases)
+          </h3>
+          <p className="mt-2">
+            The App offers optional in-app purchases (for example, to remove
+            ads). Payments are processed by <B>Google Play Billing</B>. We do{" "}
+            <B>not</B> receive or store your full payment details such as card
+            numbers. Google Play processes the transaction and may share limited
+            purchase information with us (such as whether a purchase or refund
+            occurred) so we can deliver the content you bought and provide
+            support.
+          </p>
+          <p className="mt-3">
+            We use this purchase information only to provide app functionality
+            (unlocking purchased features and validating purchases).
+            Google&rsquo;s handling of payment data is governed by the Google
+            Play Terms of Service and Google&rsquo;s Privacy Policy:{" "}
+            <ExtLink href="https://policies.google.com/privacy">
+              https://policies.google.com/privacy
+            </ExtLink>
+          </p>
+
           <div className="mt-4">
             <Callout>
               <strong className="font-semibold">Note:</strong>{" "}
               The specific data collected depends on how these SDKs are
-              configured in the App.
-              Please make sure this section matches your actual AdMob and
-              Firebase configuration and your Google Play Data Safety form.
+              configured in the App. Please make sure this section matches your
+              actual AdMob and Firebase configuration and your Google Play{" "}
+              <strong className="font-semibold">Data Safety</strong> form.
             </Callout>
           </div>
         </section>
@@ -254,12 +292,12 @@ export default function AiSpeedDetectorPrivacyPolicyPage() {
           </h2>
           <ul className="mt-3 list-disc space-y-1.5 pl-6">
             <li>
-              Camera — required to detect objects and measure speed (see Section
-              3).
+              <B>Camera</B> — required to detect objects and measure speed (see
+              Section 3).
             </li>
             <li>
-              Internet / Network access — used to load advertisements and send
-              anonymous analytics/crash data via the services above.
+              <B>Internet / Network access</B> — used to load advertisements and
+              send anonymous analytics/crash data via the services above.
             </li>
           </ul>
           <p className="mt-3">
@@ -275,10 +313,10 @@ export default function AiSpeedDetectorPrivacyPolicyPage() {
             7. Children&rsquo;s privacy
           </h2>
           <p className="mt-3">
-            The App is intended for a general audience and is not directed to
-            children under the age of 13 (or the minimum age required in your
-            country). We do not knowingly collect personal information from
-            children.
+            The App is intended for a <B>general audience</B> and is not
+            directed to children under the age of 13 (or the minimum age
+            required in your country). We do not knowingly collect personal
+            information from children.
           </p>
           <p className="mt-3">
             If you believe a child has provided information through the App, or
@@ -302,8 +340,8 @@ export default function AiSpeedDetectorPrivacyPolicyPage() {
             8. How your data is shared
           </h2>
           <p className="mt-3">
-            We do not sell your personal information. We do not share data with
-            third parties except:
+            We do <B>not</B> sell your personal information. We do not share
+            data with third parties except:
           </p>
           <ul className="mt-3 list-disc space-y-1.5 pl-6">
             <li>
@@ -336,24 +374,25 @@ export default function AiSpeedDetectorPrivacyPolicyPage() {
           </h2>
           <ul className="mt-3 list-disc space-y-1.5 pl-6">
             <li>
-              Ad personalization: Adjust or opt out via Settings → Google → Ads
-              on your device.
+              <B>Ad personalization:</B> Adjust or opt out via{" "}
+              <B>Settings → Google → Ads</B> on your device.
             </li>
             <li>
-              Reset advertising ID: Available in your device&rsquo;s Google
+              <B>Reset advertising ID:</B>{" "}
+              Available in your device&rsquo;s Google settings.
+            </li>
+            <li>
+              <B>Delete local data:</B>{" "}
+              Uninstall the App or clear its data in your device&rsquo;s app
               settings.
             </li>
             <li>
-              Delete local data: Uninstall the App or clear its data in your
-              device&rsquo;s app settings.
-            </li>
-            <li>
-              Regional rights (GDPR / CCPA): Depending on where you live, you may
-              have rights to access, correct, or delete personal data held about
-              you. Because we do not hold personal data ourselves, most such
-              requests should be directed to Google for data processed by AdMob
-              and Firebase. You may also contact us and we will assist where we
-              can.
+              <B>Regional rights (GDPR / CCPA):</B> Depending on where you live,
+              you may have rights to access, correct, or delete personal data
+              held about you. Because we do not hold personal data ourselves,
+              most such requests should be directed to Google for data processed
+              by AdMob and Firebase. You may also contact us and we will assist
+              where we can.
             </li>
           </ul>
         </section>
@@ -366,12 +405,12 @@ export default function AiSpeedDetectorPrivacyPolicyPage() {
             If you have any questions about this Privacy Policy, contact:
           </p>
           <p className="mt-3">
-            {CONTACT_NAME}
+            <B>{DEVELOPER_NAME}</B>
             <br />
             Email:{" "}
             <a
               href={`mailto:${CONTACT_EMAIL}`}
-              className="text-accent underline underline-offset-4 hover:opacity-80"
+              className="font-semibold text-accent underline underline-offset-4 hover:opacity-80"
             >
               {CONTACT_EMAIL}
             </a>
