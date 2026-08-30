@@ -15,22 +15,11 @@ export interface AppEntry {
 }
 
 /**
- * Published applications. Add a new entry here and the Apps page,
- * home page, and structured data pick it up automatically.
+ * Published applications, in the order they are displayed.
+ * Add a new entry here and the Apps page, home page, and structured
+ * data pick it up automatically.
  */
 export const apps: AppEntry[] = [
-  {
-    slug: "hindu-calendar-offline",
-    name: "Hindu Calendar - Offline",
-    tagline: "Panchang, festivals, and tithi — fully offline.",
-    description:
-      "A lightweight Hindu calendar app that works completely offline. Browse tithis, festivals, and important dates without an internet connection.",
-    icon: "/apps/hindu-calendar.webp",
-    packageId: "com.aj.hinducalendar",
-    playStoreUrl:
-      "https://play.google.com/store/apps/details?id=com.aj.hinducalendar",
-    privacyPolicyHref: "/privacy-policy",
-  },
   {
     slug: "aispeeddetector",
     name: "Speed Gun : AI Speed Detector",
@@ -42,5 +31,17 @@ export const apps: AppEntry[] = [
     playStoreUrl:
       "https://play.google.com/store/apps/details?id=com.aj.aispeeddetector",
     privacyPolicyHref: "/apps/aispeeddetector/privacy-policy",
+  },
+  {
+    slug: "hindu-calendar-offline",
+    name: "Hindu Calendar - Offline",
+    tagline: "Panchang, festivals, and tithi — fully offline.",
+    description:
+      "A lightweight Hindu calendar app that works completely offline. Browse tithis, festivals, and important dates without an internet connection.",
+    icon: "/apps/hindu-calendar.webp",
+    packageId: "com.aj.hinducalendar",
+    playStoreUrl:
+      "https://play.google.com/store/apps/details?id=com.aj.hinducalendar",
+    privacyPolicyHref: "/privacy-policy",
   },
 ];
