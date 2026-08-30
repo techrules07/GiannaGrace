@@ -25,7 +25,7 @@ export const apps: AppEntry[] = [
     tagline: "Panchang, festivals, and tithi — fully offline.",
     description:
       "A lightweight Hindu calendar app that works completely offline. Browse tithis, festivals, and important dates without an internet connection.",
-    icon: "/apps/hindu-calendar.svg",
+    icon: "/apps/hindu-calendar.webp",
     packageId: "com.aj.hinducalendar",
     playStoreUrl:
       "https://play.google.com/store/apps/details?id=com.aj.hinducalendar",
@@ -37,7 +37,7 @@ export const apps: AppEntry[] = [
     tagline: "Measure the speed of moving objects in real time.",
     description:
       "An on-device AI speed gun that uses your camera to detect moving objects and estimate their speed. Track peak and average speeds with speed history — camera processing stays on your device.",
-    icon: "/apps/ai-speed-detector.svg",
+    icon: "/apps/ai-speed-detector.webp",
     packageId: "com.aj.aispeeddetector",
     playStoreUrl:
       "https://play.google.com/store/apps/details?id=com.aj.aispeeddetector",
