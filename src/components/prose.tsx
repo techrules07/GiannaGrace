@@ -61,65 +61,102 @@ export function PolicySection({
 }
 
 /**
- * A table whose first column labels each row. On narrow screens it scrolls
- * sideways inside its own focusable region instead of widening the page.
+ * A table whose first column labels each row.
+ *
+ * Phones get one stacked card per row ("Column: value" lines) so a policy
+ * opened from Google Play never needs sideways scrolling. From the `sm`
+ * breakpoint up it is a real table; it still scrolls inside its own
+ * focusable region if the text is ever too wide.
+ *
+ * `columnWidths` takes Tailwind width classes per column (e.g. "w-[22%]");
+ * leave an entry undefined to let that column take the remaining space.
  */
 export function DataTable({
   caption,
   columns,
   rows,
+  columnWidths,
 }: {
   caption: string;
   columns: string[];
   rows: ReactNode[][];
+  columnWidths?: (string | undefined)[];
 }) {
   return (
-    <div
-      role="region"
-      aria-label={caption}
-      tabIndex={0}
-      className="mt-4 overflow-x-auto rounded-lg border border-line focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
-    >
-      <table className="w-full min-w-[40rem] border-collapse text-left text-sm">
-        <caption className="sr-only">{caption}</caption>
-        <thead className="bg-surface">
-          <tr>
-            {columns.map((column) => (
-              <th
-                key={column}
-                scope="col"
-                className="border-b border-line px-4 py-3 font-semibold text-foreground"
-              >
-                {column}
-              </th>
+    <>
+      <dl className="mt-4 divide-y divide-line rounded-lg border border-line sm:hidden">
+        {rows.map((cells, rowIndex) => (
+          <div key={rowIndex} className="px-4 py-3">
+            <dt className="font-semibold text-foreground">{cells[0]}</dt>
+            {cells.slice(1).map((cell, cellIndex) => (
+              <dd key={cellIndex} className="mt-1.5">
+                <span className="font-semibold text-foreground">
+                  {columns[cellIndex + 1]}:
+                </span>{" "}
+                {cell}
+              </dd>
             ))}
-          </tr>
-        </thead>
-        <tbody>
-          {rows.map((cells, rowIndex) => (
-            <tr
-              key={rowIndex}
-              className="border-b border-line align-top last:border-b-0"
-            >
-              {cells.map((cell, cellIndex) =>
-                cellIndex === 0 ? (
-                  <th
-                    key={cellIndex}
-                    scope="row"
-                    className="w-40 px-4 py-3 font-semibold text-foreground"
-                  >
-                    {cell}
-                  </th>
-                ) : (
-                  <td key={cellIndex} className="px-4 py-3">
-                    {cell}
-                  </td>
-                ),
-              )}
+          </div>
+        ))}
+      </dl>
+      <div
+        role="region"
+        aria-label={caption}
+        tabIndex={0}
+        className="mt-4 hidden overflow-x-auto rounded-lg border border-line focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent sm:block"
+      >
+        <table
+          className={`w-full min-w-[34rem] border-collapse text-left text-sm ${
+            columnWidths ? "table-fixed" : ""
+          }`}
+        >
+          <caption className="sr-only">{caption}</caption>
+          {columnWidths && (
+            <colgroup>
+              {columns.map((column, index) => (
+                <col key={column} className={columnWidths[index]} />
+              ))}
+            </colgroup>
+          )}
+          <thead className="bg-surface">
+            <tr>
+              {columns.map((column) => (
+                <th
+                  key={column}
+                  scope="col"
+                  className="border-b border-line px-4 py-3 font-semibold text-foreground"
+                >
+                  {column}
+                </th>
+              ))}
             </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+          </thead>
+          <tbody>
+            {rows.map((cells, rowIndex) => (
+              <tr
+                key={rowIndex}
+                className="border-b border-line align-top last:border-b-0"
+              >
+                {cells.map((cell, cellIndex) =>
+                  cellIndex === 0 ? (
+                    <th
+                      key={cellIndex}
+                      scope="row"
+                      className="px-4 py-3 font-semibold text-foreground"
+                    >
+                      {cell}
+                    </th>
+                  ) : (
+                    <td key={cellIndex} className="px-4 py-3">
+                      {cell}
+                    </td>
+                  ),
+                )}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </>
   );
 }

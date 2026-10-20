@@ -26,13 +26,11 @@ export default function PrivacyPolicyPage() {
             Overview
           </h2>
           <p className="mt-3 text-muted">
-            This Privacy Policy applies to the {APP_NAME} application
-            (&ldquo;the app&rdquo;), developed and published by{" "}
-            {siteConfig.name}
-            {" "}
-            (&ldquo;we&rdquo;, &ldquo;our&rdquo;, or &ldquo;us&rdquo;) under the
-            domain {siteConfig.domain}. We are committed to protecting your
-            privacy and being transparent about how the app works.
+            This Privacy Policy applies to the {APP_NAME} application (“the
+            app”), developed and published by {siteConfig.name} (“we”, “our”,
+            or “us”) under the domain {siteConfig.domain}. We are committed to
+            protecting your privacy and being transparent about how the app
+            works.
           </p>
           <p className="mt-3 text-muted">
             Other apps we publish may have their own privacy policies — see the{" "}

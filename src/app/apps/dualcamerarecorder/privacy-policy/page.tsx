@@ -164,6 +164,7 @@ export default function DuoVibePrivacyPolicyPage() {
           <DataTable
             caption="Google Firebase services used by the app"
             columns={["Service", "What it collects", "Why"]}
+            columnWidths={["w-[22%]", undefined, "w-[30%]"]}
             rows={FIREBASE_SERVICES}
           />
           <p className="mt-4">
@@ -203,6 +204,7 @@ export default function DuoVibePrivacyPolicyPage() {
           <DataTable
             caption="Permissions the app asks for"
             columns={["Permission", "Used for", "When it is requested"]}
+            columnWidths={["w-[24%]", "w-[34%]", undefined]}
             rows={PERMISSIONS}
           />
         </PolicySection>
