@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { B, Callout, ExtLink } from "@/components/prose";
 
 const APP_NAME = "AI Speed Detector";
 const EFFECTIVE_DATE = "14 July 2026";
@@ -12,35 +13,6 @@ export const metadata: Metadata = {
   description: `Privacy policy for the ${APP_NAME} Android application, covering on-device camera processing, local storage, Google AdMob, Google Firebase, and Google Play Billing.`,
   alternates: { canonical: "/apps/aispeeddetector/privacy-policy" },
 };
-
-/** External link that opens in a new tab with safe rel attributes. */
-function ExtLink({ href, children }: { href: string; children: React.ReactNode }) {
-  return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="break-words text-accent underline underline-offset-4 hover:opacity-80"
-    >
-      {children}
-    </a>
-  );
-}
-
-/** Inline emphasis for key terms, slightly brighter than body text. */
-function B({ children }: { children: React.ReactNode }) {
-  return (
-    <strong className="font-semibold text-foreground">{children}</strong>
-  );
-}
-
-function Callout({ children }: { children: React.ReactNode }) {
-  return (
-    <p className="rounded-lg border border-line bg-accent-soft px-4 py-3 text-sm text-foreground">
-      {children}
-    </p>
-  );
-}
 
 export default function AiSpeedDetectorPrivacyPolicyPage() {
   return (
