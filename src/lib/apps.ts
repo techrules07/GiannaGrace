@@ -21,6 +21,16 @@ export interface AppEntry {
  */
 export const apps: AppEntry[] = [
   {
+    slug: "duodrive",
+    name: "DuoDrive: Dual Car Dashcam",
+    tagline: "Road and cabin cameras, recording at once.",
+    description:
+      "Turn your phone into a front and rear dashcam with speed and GPS stamps, drive routes, and automatic impact detection. Works fully offline — no internet access, no ads, no tracking.",
+    icon: "/apps/duodrive.webp",
+    packageId: "com.aj.duodrive",
+    privacyPolicyHref: "/apps/duodrive/privacy-policy",
+  },
+  {
     slug: "dualcamerarecorder",
     name: "DuoVibe: Dual Camera Recorder",
     tagline: "Front and back cameras, recorded together.",
